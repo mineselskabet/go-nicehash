@@ -1,2 +1,4 @@
 github.com/mineselskabet/go-bitcoin v0.0.0-20210922100719-809399c0befc h1:a8BDQZjMR0o7lWvLdChBJ4Y2prbnPXqVNyeThfA51Pw=
 github.com/mineselskabet/go-bitcoin v0.0.0-20210922100719-809399c0befc/go.mod h1:EFT17EphiBBlLTx1mWVsU6PKZxirFAETeGzbtvImdmI=
+github.com/mineselskabet/go-bitcoin v0.0.0-20211001205321-70e41da9ec69 h1:BjRnu5NIM+P020G/aQ312xNfeS+/N2Yua26eyCXjLpI=
+github.com/mineselskabet/go-bitcoin v0.0.0-20211001205321-70e41da9ec69/go.mod h1:EFT17EphiBBlLTx1mWVsU6PKZxirFAETeGzbtvImdmI=

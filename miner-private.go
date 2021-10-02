@@ -5,20 +5,20 @@ import (
 )
 
 type RigStats__ struct {
-	TimeStamp     int64           `json:"statsTime"`
-	Market        string          `json:"market"`
-	UnpaidAmount  bitcoin.Bitcoin `json:"unpaidAmount"`
-	Difficulty    float64         `json:"difficulty"`
-	ProxyID       int             `json:"proxyId"`
-	TimeConnected int64           `json:"timeConnected"`
-	SpeedAccepted float64         `json:"speedAccepted"`
-	Profitability float64         `json:"profitability"`
+	TimeStamp     int64          `json:"statsTime"`
+	Market        string         `json:"market"`
+	UnpaidAmount  bitcoin.Amount `json:"unpaidAmount"`
+	Difficulty    float64        `json:"difficulty"`
+	ProxyID       int            `json:"proxyId"`
+	TimeConnected int64          `json:"timeConnected"`
+	SpeedAccepted float64        `json:"speedAccepted"`
+	Profitability float64        `json:"profitability"`
 }
 
 type Rig struct {
-	RigID        string          `json:"rigId"`
-	StatusTime   int64           `json:"statusTime"`
-	UnpaidAmount bitcoin.Bitcoin `json:"unpaidAmount"`
+	RigID        string         `json:"rigId"`
+	StatusTime   int64          `json:"statusTime"`
+	UnpaidAmount bitcoin.Amount `json:"unpaidAmount"`
 }
 
 func (c *Client) Rigs() ([]Rig, error) {
@@ -52,12 +52,12 @@ func (c *Client) MiningAddress() (string, error) {
 }
 
 type AlgoStats struct {
-	Unpaid        bitcoin.Bitcoin `json:"unpaid"`
-	Profitability bitcoin.Bitcoin `json:"profitability"`
-	SpeedAccepted float64         `json:"speedAccepted"`
-	SpeedRejected float64         `json:"speedRejected"`
-	DisplaySuffix string          `json:"displaySuffix"`
-	Active        bool            `json:"isActive"`
+	Unpaid        bitcoin.Amount `json:"unpaid"`
+	Profitability bitcoin.Amount `json:"profitability"`
+	SpeedAccepted float64        `json:"speedAccepted"`
+	SpeedRejected float64        `json:"speedRejected"`
+	DisplaySuffix string         `json:"displaySuffix"`
+	Active        bool           `json:"isActive"`
 }
 
 func (c *Client) AlgoStats() (map[string]AlgoStats, error) {

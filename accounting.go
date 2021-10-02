@@ -29,12 +29,12 @@ const (
 )
 
 type Transaction struct {
-	Id       string          `json:"id"`
-	Amount   bitcoin.Bitcoin `json:"amount"`
-	Fee      bitcoin.Bitcoin `json:"feeAmount"`
-	Time     Time            `json:"timestamp"`
-	Type     Activity        `json:"type"`
-	Currency Currency        `json:"activityCurrency"`
+	Id       string         `json:"id"`
+	Amount   bitcoin.Amount `json:"amount"`
+	Fee      bitcoin.Amount `json:"feeAmount"`
+	Time     Time           `json:"timestamp"`
+	Type     Activity       `json:"type"`
+	Currency Currency       `json:"activityCurrency"`
 }
 
 func (c *Client) AccountingActivity(currency Currency, typ Activity, stage ActivityCompletion) ([]Transaction, error) {
