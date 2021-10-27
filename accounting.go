@@ -37,6 +37,27 @@ type Transaction struct {
 	Currency Currency       `json:"activityCurrency"`
 }
 
+type Balance struct {
+	Active       bool
+	TotalBalance bitcoin.Amount
+	Available    bitcoin.Amount
+	Debt         bitcoin.Amount
+	Pending      bitcoin.Amount
+}
+
+func (c *Client) AccountingBalance(currency Currency) (*Balance, error) {
+	URL := fmt.Sprintf("https://api2.nicehash.com/main/api/v2/accounting/account2/%s", currency)
+
+	var balance Balance
+
+	err := c.exchangeJSON("GET", URL, nil, &balance)
+	if err != nil {
+		return nil, err
+	}
+
+	return &balance, nil
+}
+
 func (c *Client) AccountingActivity(currency Currency, typ Activity, stage ActivityCompletion) ([]Transaction, error) {
 	URL := fmt.Sprintf("https://api2.nicehash.com/main/api/v2/accounting/activity/%s?stage=%s&type=%s", currency, stage, typ)
 
