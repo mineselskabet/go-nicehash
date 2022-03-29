@@ -7,5 +7,10 @@ import (
 type Time int64
 
 func (t Time) Time() time.Time {
-	return time.Unix(0, int64(t)/1000000)
+	msec := t % 1000
+	sec := (t - msec) / 1000
+
+	nsec := msec * 1000000
+
+	return time.Unix(int64(sec), int64(nsec))
 }

@@ -32,7 +32,7 @@ type Transaction struct {
 	Id       string         `json:"id"`
 	Amount   bitcoin.Amount `json:"amount"`
 	Fee      bitcoin.Amount `json:"feeAmount"`
-	Time     Time           `json:"timestamp"`
+	Time     Time           `json:"time"`
 	Type     Activity       `json:"type"`
 	Currency Currency       `json:"activityCurrency"`
 }
